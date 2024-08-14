@@ -1,0 +1,18 @@
+spin_manifest_version = 2
+
+[application]
+authors = ["karthik2804 <karthik.ganeshram@fermyon.com>"]
+description = ""
+name = "react-ssr"
+version = "0.1.0"
+
+[[trigger.http]]
+route = "/..."
+component = "react-ssr"
+
+[component.react-ssr]
+source = "target/react-ssr.wasm"
+exclude_files = ["**/node_modules"]
+[component.react-ssr.build]
+command = "npm run build"
+watch = ["src/**/*.ts", "package.json"]
